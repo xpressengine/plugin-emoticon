@@ -23,6 +23,34 @@ class Plugin extends AbstractPlugin
 
     protected function route()
     {
+        // implement code
+
+        Route::fixed(
+            $this->getId(),
+            function () {
+                Route::get(
+                    'popup',
+                    [
+                        'as' => 'emoticon::popup',
+                        'uses' => function (Request $request) {
+
+                            $title = 'editor emoticon';
+
+                            // set browser title
+                            XeFrontend::title($title);
+
+                            XeFrontend::css($this->asset('assets/style.css'))->load();
+                            XeFrontend::js($this->asset('assets/emoticon.js'))->load();
+
+                            // output
+                            return XePresenter::make('emoticon::views.popup', []);
+
+                        }
+                    ]
+                );
+            }
+        );
+
         Route::settings($this->getId(), function () {
             Route::get('setting/{instanceId}', ['as' => 'settings.plugin.emoticon.setting', 'uses' => 'SettingsController@getSetting']);
             Route::post('setting/{instanceId}', ['as' => 'settings.plugin.emoticon.setting', 'uses' => 'SettingsController@postSetting']);
