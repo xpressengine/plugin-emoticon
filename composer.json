@@ -1,0 +1,48 @@
+{
+  "name": "xpressengine-plugin/emoticon",
+  "description": "This Package is Xpressengine Plugin - editor emoticon.",
+  "keywords": [
+    "xpressengine",
+    "plugin"
+  ],
+  "license": "LGPL-2.0",
+  "version": "1.0.0",
+  "type": "xpressengine-plugin",
+  "support": {
+    "email": "email@email.com"
+  },
+  "authors": [
+    {
+      "name": "input your name",
+      "email": "input@your.email",
+      "homepage": "http://mysite.com",
+      "role": "Developer"
+    }
+  ],
+  "extra": {
+    "xpressengine": {
+      "title": "editor emoticon",
+      "component": {
+        "editortool/emoticon@emoticon": {
+          "class": "Xpressengine\\Plugins\\Emoticon\\Emoticon",
+          "name": "이모티콘",
+          "description": "에디터에 이모티콘을 삽입할 수 있도록 해줌"
+        }
+      }
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packagist.xpressengine.io/"
+    }
+  ],
+  "require": {
+
+  },
+  "autoload": {
+    "psr-4": {
+      "Xpressengine\\Plugins\\Emoticon\\": "src/"
+    }
+  }
+}
