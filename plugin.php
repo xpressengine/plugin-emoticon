@@ -43,7 +43,7 @@ class Plugin extends AbstractPlugin
                             XeFrontend::js($this->asset('assets/emoticon.js'))->load();
 
                             // output
-                            return XePresenter::make('emoticon::views.popup', []);
+                            return XePresenter::make('emoticon::views.popup', ['plugin' => $this]);
 
                         }
                     ]
@@ -81,6 +81,7 @@ class Plugin extends AbstractPlugin
     {
         // implement code
 
+        // todo: 설정, 권한을 사용하는 경우 install 또는 activate 시 기본 등록 처리
         parent::install();
     }
 

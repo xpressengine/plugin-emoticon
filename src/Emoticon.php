@@ -44,7 +44,9 @@ class Emoticon extends AbstractTool
 
     public function compile($content)
     {
-        return $content;
+        preg_match('/src=\"([\/\-\:\.a-zA-Z0-9]+)\"/', $content, $match);
+
+        return '<img src="' . $match[1] . '">';
     }
 
     private function getAssetsPath()
