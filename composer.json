@@ -31,14 +31,7 @@
       }
     }
   },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://packagist.xpressengine.io/"
-    }
-  ],
   "require": {
-
   },
   "autoload": {
     "psr-4": {
