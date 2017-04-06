@@ -75,6 +75,6 @@ class Plugin extends AbstractPlugin
             Grant::EXCEPT_TYPE => [],
             Grant::VGROUP_TYPE => [],
         ]);
-        app('xe.permission')->register(Emoticon::getId(), $grant);
+        app('xe.permission')->register('editortool/emoticon@emoticon', $grant);
     }
 }

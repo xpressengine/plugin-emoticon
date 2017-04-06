@@ -6,7 +6,7 @@
     "plugin"
   ],
   "license": "LGPL-2.0",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "type": "xpressengine-plugin",
   "support": {
     "email": "email@email.com"
@@ -31,14 +31,7 @@
       }
     }
   },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://packagist.xpressengine.io/"
-    }
-  ],
   "require": {
-
   },
   "autoload": {
     "psr-4": {
