@@ -21,6 +21,21 @@ class Plugin extends AbstractPlugin
         // implement code
 
         $this->route();
+
+        intercept(
+            'XeEditor@setTools',
+            'emoticon.default.perm',
+            function ($method, $instanceId, array $tools) {
+                if (
+                    in_array(Emoticon::getId(), $tools)
+                    && !app('xe.permission')->get($key = Emoticon::getKey($instanceId))
+                ) {
+                    $this->registerDefaultPermission($key);
+                }
+
+                return $method($instanceId, $tools);
+            }
+        );
     }
 
     protected function route()
@@ -67,6 +82,11 @@ class Plugin extends AbstractPlugin
      */
     public function install()
     {
+        $this->registerDefaultPermission(Emoticon::getId());
+    }
+
+    private function registerDefaultPermission($key)
+    {
         $grant = new Grant();
         $grant->set('use', [
             Grant::RATING_TYPE => Rating::MEMBER,
@@ -75,6 +95,6 @@ class Plugin extends AbstractPlugin
             Grant::EXCEPT_TYPE => [],
             Grant::VGROUP_TYPE => [],
         ]);
-        app('xe.permission')->register('editortool/emoticon@emoticon', $grant);
+        app('xe.permission')->register($key, $grant);
     }
 }
