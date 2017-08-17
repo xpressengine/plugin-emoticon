@@ -34,7 +34,7 @@ class Emoticon extends AbstractTool
 
     public static function getInstanceSettingURI($instanceId)
     {
-        return route('settings.plugin.emoticon.setting', $instanceId);
+        return route('emoticon::setting', $instanceId);
     }
 
     public static function getKey($instanceId)

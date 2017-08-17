@@ -43,7 +43,7 @@ class Plugin extends AbstractPlugin
         // implement code
 
         Route::fixed(
-            $this->getId(),
+            'emoticon',
             function () {
                 Route::get(
                     'popup',
@@ -68,9 +68,11 @@ class Plugin extends AbstractPlugin
             }
         );
 
-        Route::settings($this->getId(), function () {
-            Route::get('setting/{instanceId}', ['as' => 'settings.plugin.emoticon.setting', 'uses' => 'SettingsController@getSetting']);
-            Route::post('setting/{instanceId}', ['as' => 'settings.plugin.emoticon.setting', 'uses' => 'SettingsController@postSetting']);
+        Route::settings('emoticon', function () {
+            Route::group(['prefix' => 'setting/{instanceId}', 'as' => 'emoticon::setting'], function () {
+                Route::get('/', 'SettingsController@getSetting');
+                Route::post('/', 'SettingsController@postSetting');
+            });
         }, ['namespace' => __NAMESPACE__]);
 
     }
@@ -83,6 +85,11 @@ class Plugin extends AbstractPlugin
     public function install()
     {
         $this->registerDefaultPermission(Emoticon::getId());
+    }
+
+    public function checkInstalled()
+    {
+        return !!app('xe.permission')->get(Emoticon::getId());
     }
 
     private function registerDefaultPermission($key)
