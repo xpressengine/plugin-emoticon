@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="panel-collapse collapse in">
-            <form method="post" action="{{ route('settings.plugin.emoticon.setting', $instanceId) }}">
+            <form method="post" action="{{ route('emoticon::setting', $instanceId) }}">
                 {{ csrf_field() }}
                 <div class="panel-body">
 
