@@ -24,6 +24,6 @@ class SettingsController extends Controller
     {
         $this->permissionRegister($request, Emoticon::getKey($instanceId), 'use');
 
-        return redirect()->route('settings.plugin.emoticon.setting', $instanceId);
+        return redirect()->route('emoticon::setting', $instanceId);
     }
 }
