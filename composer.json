@@ -1,6 +1,6 @@
 {
   "name": "xpressengine-plugin/emoticon",
-  "description": "This Package is Xpressengine Plugin - editor emoticon.",
+  "description": "에디터에서 이모티콘 기능 제공",
   "keywords": [
     "xpressengine",
     "plugin"
@@ -9,13 +9,13 @@
   "version": "0.9.2",
   "type": "xpressengine-plugin",
   "support": {
-    "email": "email@email.com"
+    "email": "developer@xpressengine.com"
   },
   "authors": [
     {
-      "name": "input your name",
-      "email": "input@your.email",
-      "homepage": "http://mysite.com",
+      "name": "XE Developers",
+      "email": "developer@xpressengine.com",
+      "homepage": "https://store.xehub.io/plugins/emoticon",
       "role": "Developer"
     }
   ],
