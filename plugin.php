@@ -1,4 +1,17 @@
 <?php
+/**
+ * Plugin.php
+ *
+ * PHP version 7
+ *
+ * @category    Emoticon
+ * @package     Xpressengine\Plugins\Emoticon
+ * @author      XE Developers <developers@xpressengine.com>
+ * @copyright   2019 Copyright XEHub Corp. <https://www.xehub.io>
+ * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
+ * @link        https://xpressengine.io
+ */
+
 namespace Xpressengine\Plugins\Emoticon;
 
 use XeFrontend;
@@ -9,6 +22,16 @@ use Xpressengine\Permission\Grant;
 use Xpressengine\Plugin\AbstractPlugin;
 use Xpressengine\User\Rating;
 
+/**
+ * Class Plugin
+ *
+ * @category    Emoticon
+ * @package     Xpressengine\Plugins\Emoticon
+ * @author      XE Developers <developers@xpressengine.com>
+ * @copyright   2019 Copyright XEHub Corp. <https://www.xehub.io>
+ * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
+ * @link        https://xpressengine.io
+ */
 class Plugin extends AbstractPlugin
 {
     /**
